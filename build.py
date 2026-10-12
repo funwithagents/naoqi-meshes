@@ -1,4 +1,4 @@
-"""Build a nao-meshes release: Aldebaran's NAO meshes as OBJ + PNG, in an encrypted zip.
+"""Build a naoqi-meshes release: Aldebaran's NAO meshes as OBJ + PNG, in an encrypted zip.
 
 Run by the maintainer, in a terminal:
 
@@ -47,8 +47,8 @@ LICENSE_URL = (
 )
 LICENSE_SHA256 = "993af1e3328c63ad28770c756d6133fcf2f76d5e48c4a0bf6720057b3d872310"
 
-# The same constant as nao-viewer's meshes.py: a gate, not a secret.
-PASSWORD = "nao-meshes:cc-by-nc-nd-4.0:accepted"
+# The same constant as naoqi-viewer's meshes.py: a gate, not a secret.
+PASSWORD = "naoqi-meshes:cc-by-nc-nd-4.0:accepted"
 
 # debian:bookworm-slim (multi-arch index), for running the installer under QEMU.
 DEBIAN_IMAGE = "debian:bookworm-slim@sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587"
@@ -77,8 +77,8 @@ MESH_SET = "V40"
 
 
 def archive_name(release: str) -> str:
-    """The archive's stem, which is also its top folder: nao-meshes-V40-r1."""
-    return f"nao-meshes-{MESH_SET}-{release}"
+    """The archive's stem, which is also its top folder: naoqi-meshes-V40-r1."""
+    return f"naoqi-meshes-{MESH_SET}-{release}"
 
 
 class BuildError(Exception):

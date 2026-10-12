@@ -1,23 +1,23 @@
-# nao-meshes
+# naoqi-meshes
 
-Aldebaran's NAO meshes, converted to OBJ with PNG textures, published as an encrypted archive for [nao-viewer](https://github.com/funwithagents/nao-viewer)'s `fetch-meshes` command.
+Aldebaran's NAO meshes, converted to OBJ with PNG textures, published as an encrypted archive for [naoqi-viewer](https://github.com/funwithagents/naoqi-viewer)'s `fetch-meshes` command.
 
 > **NAO meshes © Aldebaran, licensed under [CC BY-NC-ND 4.0](LICENSE-meshes). Non-commercial use only.**
 > This repository's MIT license covers its build script, not the meshes.
 
 ## Getting the meshes
 
-Use nao-viewer:
+Use naoqi-viewer:
 
 ```
-nao-viewer fetch-meshes
+naoqi-viewer fetch-meshes
 ```
 
 It shows the license, asks you to type `yes`, then downloads a release archive from this repository and unlocks it on your machine. The archives are encrypted so that the meshes reach someone only after they accept the license. Aldebaran allows redistribution of the meshes on that condition. Nothing in this repository's git history contains a mesh.
 
 ## Why this repository exists
 
-Aldebaran distributes the meshes only through a Linux x86_64 installer (`ros-naoqi/nao_meshes_installer`), as Collada (`.dae`) files. MuJoCo can't load Collada, and the installer doesn't run on macOS. This repository runs the installer and the conversion once, so nao-viewer's users need neither.
+Aldebaran distributes the meshes only through a Linux x86_64 installer (`ros-naoqi/nao_meshes_installer`), as Collada (`.dae`) files. MuJoCo can't load Collada, and the installer doesn't run on macOS. This repository runs the installer and the conversion once, so naoqi-viewer's users need neither.
 
 ## What a release contains
 
@@ -25,11 +25,11 @@ A release is tagged `r<N>` (`r1`, `r2`, …): the number counts releases of this
 
 | Asset | What |
 | --- | --- |
-| `nao-meshes-V40-r<N>.zip` | The meshes, ZipCrypto-encrypted |
+| `naoqi-meshes-V40-r<N>.zip` | The meshes, ZipCrypto-encrypted |
 | `LICENSE` | The CC BY-NC-ND 4.0 text, identical to `ros-naoqi/nao_meshes`'s `LICENSE` |
 | `SHA256SUMS` | SHA-256 of the two files above |
 
-Inside the archive, under `nao-meshes-V40-r<N>/`:
+Inside the archive, under `naoqi-meshes-V40-r<N>/`:
 
 - `manifest.json` (`"format": 1`, with `"release"` and `"mesh_set": "V40"`) maps each visual mesh of the NAO URDF, keyed by its path under `nao_meshes/meshes/` (`V40/HeadPitch.dae`), to its parts. All 39 are present. Each part is `{"obj", "texture", "rgba"}`, with exactly one of `texture` (a PNG; the OBJ then has UVs) and `rgba` (a flat color) set.
 - `meshes/*.obj`: one OBJ per source mesh and material. Each holds positions, normals and UVs for textured parts, with no `mtllib`. The geometry is in the source DAE's frame and units: apply the URDF's `<visual><origin>` and `scale="0.1 0.1 0.1"` exactly as for the DAE.
@@ -56,4 +56,4 @@ The install stays in `build/prefix/`, and `--prefix build/prefix` rebuilds from 
 gh release create r1 build/out/* --title r1 --notes "NAO meshes, CC BY-NC-ND 4.0, non-commercial"
 ```
 
-and pin `r1` and the archive's SHA-256 in nao-viewer (`src/nao_viewer/meshes.py`). `build/` is git-ignored: never commit anything from it.
+and pin `r1` and the archive's SHA-256 in naoqi-viewer (`src/naoqi_viewer/meshes.py`). `build/` is git-ignored: never commit anything from it.

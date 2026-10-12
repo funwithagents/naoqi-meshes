@@ -1,7 +1,7 @@
 [project]
-name = "nao-meshes"
+name = "naoqi-meshes"
 version = "1.0.0"
-description = "Builds the encrypted nao-meshes release archives: Aldebaran's NAO meshes as OBJ + PNG, for nao-viewer's fetch-meshes."
+description = "Builds the encrypted naoqi-meshes release archives: Aldebaran's NAO meshes as OBJ + PNG, for naoqi-viewer's fetch-meshes."
 requires-python = ">=3.12"
 dependencies = [
     "numpy>=2",

@@ -3,7 +3,7 @@
 Aldebaran's NAO meshes, converted to OBJ with PNG textures, published as an encrypted archive for [naoqi-viewer](https://github.com/funwithagents/naoqi-viewer)'s `fetch-meshes` command.
 
 > **NAO meshes © Aldebaran, licensed under [CC BY-NC-ND 4.0](LICENSE-meshes). Non-commercial use only.**
-> This repository's MIT license covers its build script, not the meshes.
+> This repository's Apache-2.0 license covers its build script, not the meshes.
 
 ## Getting the meshes
 
